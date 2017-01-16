@@ -1,0 +1,43 @@
+=content_for :breadcrumb do 
+  section.content-header
+        h1
+          |  会员模块
+          small
+            | 管理会员|VIP|卡管理
+        ol.breadcrumb
+          li
+            a[href="#"]
+              i.fa.fa-dashboard
+              |  主页
+          li.active
+            | 会员列表
+table
+  thead
+    tr
+      th Name
+      th Cid
+      th Sex
+      th Level
+      th Blance
+      th Phone
+      th Remark
+      th
+      th
+      th
+
+  tbody
+    - @members.each do |member|
+      tr
+        td = member.name
+        td = member.cid
+        td = member.sex
+        td = member.level
+        td = member.blance
+        td = member.phone
+        td = member.remark
+        td = link_to 'Show', member
+        td = link_to 'Edit', edit_member_path(member)
+        td = link_to 'Destroy', member, data: { confirm: 'Are you sure?' }, method: :delete
+br
+
+= link_to 'New Member', new_member_path

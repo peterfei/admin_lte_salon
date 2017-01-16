@@ -12,6 +12,8 @@ html
 	  .wrapper
 	    =render 'layouts/header'
 	    =render 'layouts/sidebar'
-	    =yield :content
+	    .content-wrapper
+		  =yield :breadcrumb
+		  section.content=yield 
 	    =render 'layouts/footer' 
 	        

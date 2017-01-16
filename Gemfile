@@ -53,3 +53,4 @@ gem 'slim-rails'
 gem "bower-rails"
 #用户登陆
 gem 'devise'
+gem 'mysql2'

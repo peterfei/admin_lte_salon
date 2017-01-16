@@ -1,17 +1,16 @@
-= content_for :content
- .content-wrapper
-	  section.content-header
-	    h1
-	      |  会员模块
-	      small
-	        | 管理会员|VIP|卡管理
-	    ol.breadcrumb
-	      li
-	        a[href="#"]
-	          i.fa.fa-dashboard
-	          |  面包屑
-	      li.active
-	        | 导航
-	  section.content
-	  	=render 'dashboard/section'
+=content_for :breadcrumb do 
+  section.content-header
+    h1
+      |  会员模块
+      small
+        | 管理会员|VIP|卡管理
+    ol.breadcrumb
+      li
+        a[href="#"]
+          i.fa.fa-dashboard
+          |  面包屑
+      li.active
+        | 导航
+section.content
+	=render 'dashboard/section'
 

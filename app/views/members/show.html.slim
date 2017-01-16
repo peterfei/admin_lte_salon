@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @member.name
+p
+  strong Cid:
+  = @member.cid
+p
+  strong Sex:
+  = @member.sex
+p
+  strong Level:
+  = @member.level
+p
+  strong Blance:
+  = @member.blance
+p
+  strong Phone:
+  = @member.phone
+p
+  strong Remark:
+  = @member.remark
+
+= link_to 'Edit', edit_member_path(@member)
+'|
+= link_to 'Back', members_path

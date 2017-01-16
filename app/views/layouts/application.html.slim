@@ -2,7 +2,7 @@ doctype html
 html
   head
     title
-      | AdminLteSalon
+      | AdminLte
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
@@ -120,11 +120,10 @@ html
 	                    a.btn.btn-default.btn-flat[href="#"]
 	                      | Profile
 	                  .pull-right
-	                    a.btn.btn-default.btn-flat[href="#"]
-	                      | Sign out
-	            li
-	              a[href="#" data-toggle="control-sidebar"]
-	                i.fa.fa-gears
+	                    =link_to "退出",destroy_account_session_path,method: :delete,class:"btn btn-default btn-flat"
+	            / li
+	            /   a[href="#" data-toggle="control-sidebar"]
+	            /     i.fa.fa-gears
 	    aside.main-sidebar
 	      section.sidebar
 	        .user-panel
@@ -187,11 +186,7 @@ html
 
 	    footer.main-footer
 	      .pull-right.hidden-xs
-	        |  Anything you want 
+	        |  
 	      strong
 	        | Copyright © 2016 
-	        a[href="#"]
-	          | Company
-	        | .
-	      |  All rights reserved. 
-	    
+	        

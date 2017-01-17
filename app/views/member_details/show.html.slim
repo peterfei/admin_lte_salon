@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Member:
+  = @member_detail.member
+p
+  strong Per pay:
+  = @member_detail.per_pay
+p
+  strong Re pay:
+  = @member_detail.re_pay
+p
+  strong Cumulative:
+  = @member_detail.cumulative
+p
+  strong Createtime:
+  = @member_detail.createtime
+p
+  strong Operate:
+  = @member_detail.operate_id
+
+= link_to 'Edit', edit_member_detail_path(@member_detail)
+'|
+= link_to 'Back', member_details_path

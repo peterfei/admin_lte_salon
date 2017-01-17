@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116093931) do
+ActiveRecord::Schema.define(version: 20170117033612) do
 
   create_table "accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,18 @@ ActiveRecord::Schema.define(version: 20170116093931) do
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "member_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "member_id"
+    t.decimal  "per_pay",              precision: 10, scale: 2
+    t.decimal  "re_pay",               precision: 10, scale: 2
+    t.decimal  "cumulative",           precision: 10, scale: 2
+    t.integer  "createtime"
+    t.integer  "operate_id", limit: 2
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.index ["member_id"], name: "index_member_details_on_member_id", using: :btree
+  end
+
   create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "cid"
@@ -42,4 +54,5 @@ ActiveRecord::Schema.define(version: 20170116093931) do
     t.datetime "updated_at",                                        null: false
   end
 
+  add_foreign_key "member_details", "members"
 end

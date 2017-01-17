@@ -1,0 +1,31 @@
+h1 Listing member_details
+
+table
+  thead
+    tr
+      th Member
+      th Per pay
+      th Re pay
+      th Cumulative
+      th Createtime
+      th Operate
+      th
+      th
+      th
+
+  tbody
+    - @member_details.each do |member_detail|
+      tr
+        td = member_detail.member
+        td = member_detail.per_pay
+        td = member_detail.re_pay
+        td = member_detail.cumulative
+        td = member_detail.createtime
+        td = member_detail.operate_id
+        td = link_to 'Show', member_detail
+        td = link_to 'Edit', edit_member_detail_path(member_detail)
+        td = link_to 'Destroy', member_detail, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Member detail', new_member_detail_path

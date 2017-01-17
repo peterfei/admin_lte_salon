@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :member_details
   resources :members
   # devise_for :accounts
   get 'dashboard/index'

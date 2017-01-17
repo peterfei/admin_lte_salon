@@ -54,3 +54,7 @@ gem "bower-rails"
 #用户登陆
 gem 'devise'
 gem 'mysql2'
+#分页
+gem 'kaminari'
+#面包屑
+gem "breadcrumbs_on_rails"

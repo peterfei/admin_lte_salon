@@ -1,0 +1,10 @@
+"zh-CN":
+  activerecord:
+    attributes:
+      member:
+        enums:
+          level:
+            member_junior: "店庆卡"
+            member_middle: "金卡"
+            member_advanced: "会员充值卡"
+

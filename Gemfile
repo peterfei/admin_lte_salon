@@ -58,3 +58,4 @@ gem 'mysql2'
 gem 'kaminari'
 #面包屑
 gem "breadcrumbs_on_rails"
+gem 'rails-i18n'

@@ -12,7 +12,18 @@ class FromDirectShipPrice < FromDB
   #   self.status == 0 ? false : true
   # end
 
+  # 店庆卡|MEMER_JUNIOR   会员充值卡|MEMER_ADVANCED  金卡|MEMER_MIDDLE
+  def convert_level
+    case self.level
+      when 'MEMER_JUNIOR'
+        0
+      when 'MEMER_ADVANCED'
+        2
+      else
+        1
 
+    end
+  end
 end
 
 

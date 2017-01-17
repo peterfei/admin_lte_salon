@@ -1,4 +1,4 @@
-en:
+zh-CN:
   simple_form:
     "yes": 'Yes'
     "no": 'No'
@@ -29,3 +29,6 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+    labels:
+      member_detail:
+        per_pay: "交易明细"

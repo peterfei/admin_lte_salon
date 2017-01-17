@@ -64,7 +64,9 @@ class MembersController < ApplicationController
 
   #会员充值
   def charge
-
+    if params[:page].present?
+      @page = params[:page]
+    end
     respond_to do |format|
       format.html { redirect_to members_url, notice: 'Member was successfully destroyed.' }
       format.js

@@ -1,4 +1,13 @@
-$('body').append('<%= j render partial: "detail_modal" ,locals:{member:@member}%>');
+<%#-binding.pry%>
+<%-if @page.present?%>
+//$('#detailModal').html('').appendTo('<%= j render partial: "detail_modal" ,locals:{member:@member,page:@page.to_i}%>');
+$('#detail_charge_history').html('<%= j render partial: "modal_detail_charge_history" ,locals:{member:@member,page:@page.to_i}%>')
+<%else%>
+
+$('body').append('<%= j render partial: "detail_modal" ,locals:{member:@member,page:1}%>');
+$('#detail_charge_history').html('<%= j render partial: "modal_detail_charge_history" ,locals:{member:@member,page:1}%>')
+<%end%>
+
 $('#detailModal').on("hidden.bs.modal", function (e) {
 //  $(this).removeData('modal');
   //  $(e.target).removeData('bs.modal');

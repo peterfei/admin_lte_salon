@@ -7,4 +7,16 @@
             member_junior: "店庆卡"
             member_middle: "金卡"
             member_advanced: "会员充值卡"
+          sex:
+            male: '男'
+            female: '女'
+    models:
+      member_detail: "会员消费明细"
+  views:
+      pagination:
+        first: "&laquo; 第一页"
+        last: "末页 &raquo;"
+        previous: "&lsaquo;  上一页"
+        next: "下一页 &rsaquo;"
+        truncate: "&hellip;"
 

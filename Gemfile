@@ -61,3 +61,5 @@ gem "breadcrumbs_on_rails"
 gem 'rails-i18n'
 gem 'simple_form'
 gem 'pry-rails'
+gem 'pry-nav'
+gem 'pry'

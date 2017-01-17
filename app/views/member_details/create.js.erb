@@ -1,3 +1,5 @@
 
 $('#detailModal tbody').append('<%= j render partial: "members/detail_td" ,locals:{detail:@detail}%>');
-flash('增加消费成功', 'success');
+$('#card_blance').html('<%=@detail.cumulative%>')
+$('#member_detail_per_pay').val('');
+flash('扣除消费记录成功', 'success');

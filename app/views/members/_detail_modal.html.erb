@@ -13,8 +13,8 @@
               <span class="label label-success">会员名称<i class="fa fa-male"></i><b><%=member.name%></b></span>
               <span class="label label-info"><i class="fa fa-phone">联系电话</i><%=member.phone%></span>
 
-              <span class="label label-danger">
-                卡内余额<%=member.blance%>
+              <span class="label label-danger" id="card_blance">
+                 <%=member.blance%>
               </span>
             </div>
           </div>
@@ -35,37 +35,8 @@
             </div>
           </div>
         </div>
-        <div class="box">
-          <div class="box-header with-border">
-            <h3 class="box-title">消费历史记录</h3>
-            <div class="box-tools pull-right">
-              <!-- Buttons, labels, and many other things can be placed here! -->
-              <!-- Here is a label for example -->
-
-            </div><!-- /.box-tools -->
-          </div><!-- /.box-header -->
-          <div class="box-body">
-            <div class="row">
-              <div class="col-sm-12">
-                <table class="table table-bordered table-striped dataTable">
-                  <thead>
-                    <th>单次消费</th>
-                    <th>单次充值</th>
-                    <th>卡内余额</th>
-                    <th>消费时间</th>
-                  </thead>
-                  <tbody>
-                    <%-member.member_details.each do |detail|%>
-                        <%=render partial:'detail_td',locals:{detail:detail}%>
-                    <%end%>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div><!-- /.box-body -->
-          <div class="box-footer">
-
-          </div><!-- box-footer -->
+        <div class="box" id="detail_charge_history">
+          <%=render partial: 'modal_detail_charge_history',locals: {member:member,page:page}%>
         </div><!-- /.box -->
       </div>
       <div class="modal-footer">

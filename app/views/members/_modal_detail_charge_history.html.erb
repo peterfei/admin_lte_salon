@@ -1,0 +1,31 @@
+<div class="box-header with-border">
+  <h3 class="box-title">消费历史记录</h3>
+  <div class="box-tools pull-right">
+    <!-- Buttons, labels, and many other things can be placed here! -->
+    <!-- Here is a label for example -->
+
+  </div><!-- /.box-tools -->
+</div><!-- /.box-header -->
+<div class="box-body">
+  <div class="row">
+    <div class="col-sm-12">
+      <%-detail =member.member_details.order('id desc').page(page)%>
+      <table class="table table-bordered table-striped dataTable">
+        <thead>
+        <th>单次消费</th>
+        <th>单次充值</th>
+        <th>卡内余额</th>
+        <th>消费时间</th>
+        </thead>
+        <tbody>
+        <%-detail.each do |detail|%>
+            <%=render partial:'detail_td',locals:{detail:detail}%>
+        <%end%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div><!-- /.box-body -->
+<div class="box-footer">
+  <%=paginate detail,remote:true%>
+</div><!-- box-footer -->

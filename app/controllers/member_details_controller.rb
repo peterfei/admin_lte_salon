@@ -28,8 +28,11 @@ class MemberDetailsController < ApplicationController
 
     respond_to do |format|
       if @member_detail.save
+        @detail = MemberDetail.last
+        flash[:success] = "添加成功"
         format.html { redirect_to @member_detail, notice: 'Member detail was successfully created.' }
         format.json { render :show, status: :created, location: @member_detail }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @member_detail.errors, status: :unprocessable_entity }

@@ -1,0 +1,7 @@
+$('body').append('<%= j render partial: "detail_modal" ,locals:{member:@member}%>');
+$('#detailModal').on("hidden.bs.modal", function (e) {
+//  $(this).removeData('modal');
+  //  $(e.target).removeData('bs.modal');
+  $(this).remove()
+});
+$('#detailModal').modal('show');

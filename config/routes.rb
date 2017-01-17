@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :member_details
-  resources :members
+  resources :members do
+    member do
+      get 'charge'
+    end
+  end
   # devise_for :accounts
   get 'dashboard/index'
   devise_for :accounts, controllers: {

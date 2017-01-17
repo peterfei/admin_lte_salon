@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require admin-lte/bootstrap/js/bootstrap
 //= require admin-lte/dist/js/app.js
+//= require flash-message
 //= require_tree .
+// $('body').on('hidden.bs.modal', '.modal', function () {
+//     $(this).removeData('bs.modal');
+// });

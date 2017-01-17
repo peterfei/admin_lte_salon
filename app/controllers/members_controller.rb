@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_action :set_member, only: [:show, :edit, :update, :destroy]
+  before_action :set_member, only: [:show, :edit, :update, :destroy,:charge]
 
   # GET /members
   # GET /members.json
@@ -61,6 +61,15 @@ class MembersController < ApplicationController
     end
   end
 
+
+  #会员充值
+  def charge
+
+    respond_to do |format|
+      format.html { redirect_to members_url, notice: 'Member was successfully destroyed.' }
+      format.js
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_member

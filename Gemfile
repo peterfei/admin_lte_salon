@@ -59,3 +59,5 @@ gem 'kaminari'
 #面包屑
 gem "breadcrumbs_on_rails"
 gem 'rails-i18n'
+gem 'simple_form'
+gem 'pry-rails'

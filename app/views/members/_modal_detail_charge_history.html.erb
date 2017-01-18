@@ -1,15 +1,16 @@
 <div class="box-header with-border">
-  <h3 class="box-title">消费历史记录</h3>
-  <div class="box-tools pull-right">
+  <h3 class="box-title">消费历史</h3>
+  <div class="box-tools">
     <!-- Buttons, labels, and many other things can be placed here! -->
     <!-- Here is a label for example -->
+    <%-detail =member.member_details.order('id desc').page(page)%>
 
   </div><!-- /.box-tools -->
 </div><!-- /.box-header -->
 <div class="box-body">
   <div class="row">
     <div class="col-sm-12">
-      <%-detail =member.member_details.order('id desc').page(page)%>
+
       <table class="table table-bordered table-striped dataTable">
         <thead>
         <th>单次消费</th>

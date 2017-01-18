@@ -12,6 +12,7 @@
             female: '女'
     models:
       member_detail: "会员消费明细"
+      member: '会员'
   views:
       pagination:
         first: "&laquo; 第一页"

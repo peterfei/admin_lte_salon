@@ -1,5 +1,5 @@
 
 $('#detail_charge_history tbody').append('<%= j render partial: "members/detail_td" ,locals:{detail:@detail}%>');
-$('#card_blance').html('<%=@detail.cumulative%>')
+$('#card_blance').html('余额:<%=@detail.cumulative%>')
 $('#member_detail_per_pay').val('');
 flash('操作成功', 'success');

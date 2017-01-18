@@ -32,3 +32,12 @@ zh-CN:
     labels:
       member_detail:
         per_pay: "交易明细"
+      member:
+        new:
+          name: "姓名"
+          sex: "性别"
+          cid: '卡号'
+          phone: '联系电话'
+          level: '会员级别'
+          blance: '卡内余额'
+          remark: '备注'

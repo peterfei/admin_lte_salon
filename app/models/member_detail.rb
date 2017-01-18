@@ -10,6 +10,7 @@ class MemberDetail < ApplicationRecord
       self.per_pay = 0.00
     else
       self.cumulative =  self.member.blance-self.per_pay
+      self.re_pay = 0.00
     end
 
     self.operate_id = 1

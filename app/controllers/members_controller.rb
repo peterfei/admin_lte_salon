@@ -15,6 +15,9 @@ class MembersController < ApplicationController
   # GET /members/new
   def new
     @member = Member.new
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /members/1/edit

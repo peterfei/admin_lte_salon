@@ -13,7 +13,7 @@ TIMEOUT_MAPPINGS =
   $flash = $("""<div class="alert alert-#{level} fade in flash-message">
     <button type="button" class="close">&times;</button>
     #{message}
-  </div>""").css('top', last_top + 4).appendTo('.modal-header').fadeIn()
+  </div>""").css('top', last_top + 10).appendTo('.modal-header').fadeIn()
 
   # 设置提示信息自动消失的时间
   flash_timeout = timeout or TIMEOUT_MAPPINGS[level] or 2000

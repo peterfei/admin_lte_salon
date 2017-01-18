@@ -5,7 +5,13 @@ class MemberDetail < ApplicationRecord
   private
   def total_price_before_save
     self.createtime = Time.now.to_i
-    self.cumulative =  self.member.blance-self.per_pay
+    if self.re_pay.present?
+      self.cumulative =  self.member.blance+self.re_pay
+      self.per_pay = 0.00
+    else
+      self.cumulative =  self.member.blance-self.per_pay
+    end
+
     self.operate_id = 1
     self.member.update_attribute(:blance,self.cumulative)
   end

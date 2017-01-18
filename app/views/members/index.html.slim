@@ -45,8 +45,9 @@
                   = member.remark
                 td.btn-group colspan="3"
                    = link_to '会员消费', charge_member_path(member),class:"btn btn-info btn-sm",remote:true
-                   = link_to '详情', member,class:"btn btn-info btn-sm"
-                   = link_to '编辑', edit_member_path(member),class:"btn btn-primary btn-sm"
+                   = link_to '会员充值', rebill_member_path(member),class:"btn bg-olive btn-sm",remote:true
+                   = link_to '会员详情', member,class:"btn btn-info btn-sm"
+                   = link_to '会员编辑', edit_member_path(member),class:"btn btn-primary btn-sm"
                    = link_to '删除', member, data: { confirm: '确认删除?' }, method: :delete,class:"btn btn-danger btn-sm"
   .box-footer.clearfix
     .pull-right.pagination.pagination-sm.no-margin

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :members do
     member do
       get 'charge'
+      get 'rebill'
     end
   end
   # devise_for :accounts

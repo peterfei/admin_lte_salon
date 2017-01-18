@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_action :set_member, only: [:show, :edit, :update, :destroy,:charge]
+  before_action :set_member, only: [:show, :edit, :update, :destroy,:charge,:rebill]
 
   # GET /members
   # GET /members.json
@@ -62,11 +62,19 @@ class MembersController < ApplicationController
   end
 
 
-  #会员充值
+  #会员消费
   def charge
     if params[:page].present?
       @page = params[:page]
     end
+    respond_to do |format|
+      format.html { redirect_to members_url, notice: 'Member was successfully destroyed.' }
+      format.js
+    end
+  end
+
+  #会员充值
+  def rebill
     respond_to do |format|
       format.html { redirect_to members_url, notice: 'Member was successfully destroyed.' }
       format.js

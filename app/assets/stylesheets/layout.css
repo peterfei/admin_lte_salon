@@ -1,0 +1,12 @@
+.flash-message {
+    position: fixed;
+    top: 50%;
+    /*right: 0px;*/
+    /*z-index: 2147483647;*/
+    width:80%;
+    font-size: 1em;
+    line-height: 1em;
+    -webkit-box-shadow: 1px 1px 1px #cccccc;
+    -moz-box-shadow:    1px 1px 1px #cccccc;
+    box-shadow:         1px 1px 1px #cccccc;
+}

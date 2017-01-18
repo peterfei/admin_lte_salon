@@ -1,44 +1,40 @@
-<div class="modal fade" tabindex="-1" role="dialog" id="detailModal">
+<div class="modal fade" tabindex="-1" role="dialog" id="rebillModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <span class="label  label-primary">卡号<i class="fa fa-credit-card"></i><%=member.cid%></span>
+        <span class="label  label-primary"><i class="fa fa-credit-card">卡号</i><%=member.cid%></span>
         <span class="label label-warning">会员名称<i class="fa fa-male"></i><b><%=member.name%></b></span>
-        <span class="label label-info">联系电话<i class="fa fa-phone"></i><%=member.phone%></span>
+        <span class="label label-info"><i class="fa fa-phone">联系电话</i><%=member.phone%></span>
 
         <span class="label label-danger" id="card_blance">
            余额<%=member.blance%>
         </span>
-
       </div>
       <div class="modal-body">
         <div class="box">
           <div class="box-header">
             <div class="pull-left">
-              <h4 class="modal-title">增加消费</h4>
+                <h4>会员充值</h4>
             </div>
           </div>
           <div class="box-body">
             <div class="row">
               <%= simple_form_for MemberDetail.new(member_id:member.id),wrapper:"inline_form",remote:true do |f| %>
                   <div class="col-sm-4">
-                    <%= f.label :per_pay %>
+                    <%= f.label :re_pay %>
                   </div>
                   <div class="col-sm-8">
-                    <%= f.input_field :per_pay %>
+                    <%= f.input_field :re_pay %>
                     <%= f.hidden_field :member_id %>
                   </div>
                   <div class="col-sm-12 ">
-                    <%= f.button :submit ,class:'btn btn-default btn-flat pull'%>
+                    <%= f.button :submit ,class:'btn btn-default btn-flat pull',value:"会员充值"%>
                   </div>
               <% end %>
             </div>
           </div>
         </div>
-        <div class="box" id="detail_charge_history">
-          <%=render partial: 'modal_detail_charge_history',locals: {member:member,page:page}%>
-        </div><!-- /.box -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>

@@ -1,26 +1,56 @@
-<h2>登陆</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title> 登录</title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag "application"%>
+  </head>
+  <body class="hold-transition login-page" style="background:url(<%=image_path('admin-lte/dist/img/boxed-bg.jpg')%>);background-size:cover;   ">
+    <div class="login-box">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :login %><br />
-    <%= f.text_field :login %>
-  </div>
+      <!-- /.login-logo -->
+      <div class="login-box-body">
+        <p class="login-box-msg">Login</p>
+        <!-- 原代码sart -->
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+            <!-- <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div> -->
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+            <div class="form-group has-feedback">
+              <%= f.label :login,'用户名' %><br />
+              <%= f.text_field :login ,:class=>'form-control'%>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :password,'密码' %><br />
+              <%= f.password_field :password, autocomplete: "off" ,:class=>'form-control'%>
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+              <% if devise_mapping.rememberable? -%>
+                  <div class="col-xs-8">
+                    <!-- <div class="checkbox icheck">
+                        <%= f.check_box :remember_me %>
+                        <%= f.label :remember_me %>
+                    </div>-->
+                  </div>
+              <% end -%>
+              <div class="col-xs-4">
+                <%= f.submit "登录",:class=>'btn btn-primary btn-block btn-flat' %>
+              </div>
+            </div>
+        <% end %>
+        <!-- 原代码end -->
+      </div>
+      <!-- /.login-box-body -->
     </div>
-  <% end -%>
+  </body>
+</html>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "accounts/shared/links" %>

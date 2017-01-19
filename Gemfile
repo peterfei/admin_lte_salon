@@ -72,3 +72,10 @@ gem 'client_side_validations',
 gem 'client_side_validations-simple_form',
     github: 'DavyJonesLocker/client_side_validations-simple_form',
     branch: 'rails5'
+
+gem 'mina'
+
+gem 'mina-puma', :require => false
+group :production do
+  gem 'puma', '~> 3.0'
+end

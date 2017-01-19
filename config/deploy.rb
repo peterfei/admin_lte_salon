@@ -7,7 +7,7 @@ require 'mina/puma'
 set :domain, 'deploy@115.28.247.59'
 #服务器中项目部署位置
 set :deploy_to, '/home/deploy/salon'
-set :rvm_path, '/home/deploy/.rvm/scripts/rvm'
+set :rvm_path, '/usr/local/rvm'
 set :bundle_gemfile, "app/Gemfile"
 set :rails_env, 'development'
 

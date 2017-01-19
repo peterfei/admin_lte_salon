@@ -1,0 +1,17 @@
+//
+<% if @result %>
+flash('操作成功', 'success');
+setTimeout(function () {
+  $('#newModal').modal('hide');
+
+},2000);
+<%else%>
+$('#member_form').html("<%= j render(:partial => 'form') %>");
+$('form[data-validate]').validate();
+<%end%>
+
+$('#newModal').on("hidden.bs.modal", function (e) {
+  $(this).removeData('modal');
+  //  $(e.target).removeData('bs.modal');
+  $(this).remove();
+});

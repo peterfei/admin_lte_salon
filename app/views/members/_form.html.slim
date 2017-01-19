@@ -1,8 +1,8 @@
-= simple_form_for @member,wrapper:"horizontal_form",remote:true do |f|
+= simple_form_for @member,wrapper:"horizontal_form",remote:true,validate:true do |f|
   =f.input :name
   =f.input :cid
-  =f.input :sex,collection: Member.sexes,label_method: lambda{|sex| t("activerecord.attributes.member.enums.sex.#{sex[0]}")}
-  =f.input :level,collection:Member.levels
+  =f.input :sex,collection: Member.sexes.keys.to_a,label_method: lambda{|sex| t("activerecord.attributes.member.enums.sex.#{sex}")}
+  =f.input :level,collection:Member.levels.keys.to_a,label_method: lambda{|level| t("activerecord.attributes.member.enums.level.#{level}")}
   =f.input :blance
   =f.input :phone
   =f.input :remark,as: :text

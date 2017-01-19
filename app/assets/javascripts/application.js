@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require admin-lte/bootstrap/js/bootstrap
 //= require admin-lte/dist/js/app.js
+//= require rails.validations
+//= require rails.validations.simple_form
 //= require flash-message
 //= require_tree .
 // $('body').on('hidden.bs.modal', '.modal', function () {

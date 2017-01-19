@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -63,3 +63,12 @@ gem 'simple_form'
 gem 'pry-rails'
 gem 'pry-nav'
 gem 'pry'
+
+# gem 'client_side_validations',branch:'rails5',git:"https://github.com/DavyJonesLocker/client_side_validations.git"
+# gem 'client_side_validations-simple_form',branch:'rails5'
+gem 'client_side_validations',
+    github: 'DavyJonesLocker/client_side_validations',
+    branch: 'rails5'
+gem 'client_side_validations-simple_form',
+    github: 'DavyJonesLocker/client_side_validations-simple_form',
+    branch: 'rails5'

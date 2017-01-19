@@ -79,15 +79,20 @@ task :deploy => :environment do
     invoke :'bundle:install'
     invoke :'rails:db_create'
     invoke :'rails:db_migrate'
-    # invoke :'rails:assets_precompile'
+
+
 
     to :launch do
       # invoke :'puma:restart'
       # queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
-      invoke :'puma:phased_restart'
+      queue "source /home/deploy/.nvm/nvm.sh&&cd #{deploy_to}/current && bundle exec rake bower:install"
+      queue "cd #{deploy_to}/current && bundle exe rake db:seed"
+      # queue "cd #{deploy_to}/current && bundle exe  rails runner lib/tasks/convert_db.rb &&bundle exe rails runner lib/tasks/convert_member_detail.rb "
+      # invoke :'puma:phased_restart'
       # queue "chown -R www-data #{deploy_to}"
       # queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
     end
+    # invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
   end
 end

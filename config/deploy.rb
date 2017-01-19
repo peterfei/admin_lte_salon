@@ -7,7 +7,7 @@ require 'mina/puma'
 set :domain, 'deploy@115.28.247.59'
 #服务器中项目部署位置
 set :deploy_to, '/home/deploy/salon'
-set :rvm_path, '/usr/local/rvm'
+set :rvm_path, '/usr/local/rvm/scripts/rvm'
 set :bundle_gemfile, "app/Gemfile"
 set :rails_env, 'development'
 
@@ -20,7 +20,7 @@ set :branch, 'master'
 set :shared_paths, ['config/database.yml', 'log', 'config/secrets.yml','log', 'tmp', 'public/uploads']
 task :environment do
   # 如果使用的是rbenv,这么设置,但需确保.rbenv-version(rbenv local 1.9.3-p374)已经存在于你的项目中
-  invoke :'rvm:use[ruby-2.1.2p95@default]'
+  invoke :'rvm:use[ruby-2.1.2@default]'
 
 
   # 如果使用rvm，可以这样加载一个RVM version@gemset

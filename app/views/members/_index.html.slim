@@ -1,0 +1,40 @@
+.box-header
+  = link_to '新建会员', new_member_path,class:'btn btn-flat btn-primary',remote:true
+  .box-body
+    .row
+      .col-sm-12
+        table.table.table-bordered.table-striped.dataTable
+          thead
+            tr
+              th 姓名
+              th 卡号
+              th 性别
+              th 级别
+              /th 余额
+              th 电话
+              th width="10%"
+                | 备注
+              th colspan="3"
+                | 操作
+
+
+          tbody
+            - members.each do |member|
+              tr
+                td = member.name
+                td = member.cid
+                td = member.t_enum(:sex)
+                td = member.t_enum(:level)
+                /td = member.blance
+                td = member.phone
+                td width="10%"
+                  = member.remark
+                td.btn-group colspan="3"
+                  = link_to '会员消费', charge_member_path(member),class:"btn btn-info btn-sm",remote:true
+                  = link_to '会员充值', rebill_member_path(member),class:"btn bg-olive btn-sm",remote:true
+                  /= link_to '会员详情', member,class:"btn btn-info btn-sm"
+                  = link_to '会员编辑', edit_member_path(member),class:"btn btn-primary btn-sm",remote:true
+                  = link_to '删除', member, data: { confirm: '确认删除?' }, method: :delete,class:"btn btn-danger btn-sm"
+  .box-footer.clearfix
+    .pull-right.pagination.pagination-sm.no-margin
+      = paginate members

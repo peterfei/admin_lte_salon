@@ -22,6 +22,9 @@ class MembersController < ApplicationController
 
   # GET /members/1/edit
   def edit
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /members
@@ -29,6 +32,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
     @result = @member.save
+    @members = Member.all.page(params[:page])
     respond_to do |format|
       if @result
         format.html { redirect_to @member, notice: 'Member was successfully created.' }
@@ -47,10 +51,13 @@ class MembersController < ApplicationController
   # PATCH/PUT /members/1
   # PATCH/PUT /members/1.json
   def update
+    @result = @member.update(member_params)
+    @members = Member.all.page(params[:page])
     respond_to do |format|
-      if @member.update(member_params)
+      if @result
         format.html { redirect_to @member, notice: 'Member was successfully updated.' }
         format.json { render :show, status: :ok, location: @member }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @member.errors, status: :unprocessable_entity }

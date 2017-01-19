@@ -7,9 +7,9 @@ threads 2, 64
 workers 4
 
 #项目名
-app_name = "gubeisalon"
+app_name = "salon"
 #项目路径
-application_path = "/var/www/#{app_name}"
+application_path = "/home/deploy/#{app_name}"
 #这里一定要配置为项目路径下地current
 directory "#{application_path}/current"
 

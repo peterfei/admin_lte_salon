@@ -4,9 +4,9 @@ require 'mina/bundler'
 require 'mina/rvm'
 require 'mina/puma'
 #服务器地址,是使用ssh的方式登录服务器
-set :domain, 'root@115.28.247.59'
+set :domain, 'deploy@115.28.247.59'
 #服务器中项目部署位置
-set :deploy_to, '/var/www/gubeisalon'
+set :deploy_to, '/home/deploy/salon'
 set :rvm_path, '/home/deploy/.rvm/scripts/rvm'
 set :bundle_gemfile, "app/Gemfile"
 set :rails_env, 'development'

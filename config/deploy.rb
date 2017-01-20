@@ -86,7 +86,7 @@ task :deploy => :environment do
       # invoke :'puma:restart'
       # queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "source /home/deploy/.nvm/nvm.sh&&cd #{deploy_to}/current && bundle exec rake bower:install"
-      invoke :'puma:phased_restart'
+      # invoke :'puma:phased_restart'
       # queue "chown -R www-data #{deploy_to}"
       # queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
     end

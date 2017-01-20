@@ -1,7 +1,7 @@
 #! /bin/sh
 
-PUMA_CONFIG_FILE=/home/deploy/salon/current/config/puma.rb
-PUMA_PID_FILE=/home/deploy/salon/shared/tmp/pids/puma.pid
+PUMA_CONFIG_FILE=/home/deploy/salon/current/config/salon.rb
+PUMA_PID_FILE=/home/deploy/salon/shared/tmp/pids/salon.pid
 PUMA_SOCKET=/home/deploy/salon/shared/tmp/sockets/salon.sock
 
 # check if puma process is running

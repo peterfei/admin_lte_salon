@@ -52,7 +52,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.serve_static_files = false
+  # config.serve_static_files = false
   config.public_file_server.enabled = false
 
 

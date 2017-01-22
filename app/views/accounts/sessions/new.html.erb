@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
-    <title> 登录</title>
+    <title>登录</title>
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag "application"%>
   </head>
@@ -13,15 +13,12 @@
 
       <!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Login</p>
+        <h3><p class="login-box-msg"><b>系统登陆</b></p></h3>
         <!-- 原代码sart -->
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
 
-            <!-- <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div> -->
+
 
             <div class="form-group has-feedback">
               <%= f.label :login,'用户名' %><br />

@@ -92,6 +92,7 @@ task :deploy => :environment do
       invoke :'puma:hard_restart'
 
 
+
       # queue "chown -R www-data #{deploy_to}"
       # queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
     end

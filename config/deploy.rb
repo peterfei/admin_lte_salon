@@ -91,8 +91,6 @@ task :deploy => :environment do
       # queue "cd #{deploy_to}/current && bundle exe  rails runner lib/tasks/convert_db.rb &&bundle exe rails runner lib/tasks/convert_member_detail.rb "
       invoke :'puma:hard_restart'
 
-
-
       # queue "chown -R www-data #{deploy_to}"
       # queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
     end

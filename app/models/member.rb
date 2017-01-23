@@ -11,4 +11,5 @@ class Member < ApplicationRecord
   validates :phone,:presence=>{:message=>'电话号码不能为空'},
             :uniqueness =>{:message=>'电话号码已存在'}
   default_scope  {order("id desc")}
+
 end

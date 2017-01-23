@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     member do
       get 'charge'
       get 'rebill'
+
+    end
+    collection do
+      get 'export'
     end
   end
   # devise_for :accounts

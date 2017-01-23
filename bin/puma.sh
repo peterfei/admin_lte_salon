@@ -1,7 +1,7 @@
 #! /bin/sh
 
-PUMA_CONFIG_FILE=/home/deploy/salon/current/config/puma.rb
-PUMA_PID_FILE=/home/deploy/salon/shared/tmp/pids/puma.pid
+PUMA_CONFIG_FILE=/home/deploy/salon/current/config/salon.rb
+PUMA_PID_FILE=/home/deploy/salon/shared/tmp/pids/salon.pid
 PUMA_SOCKET=/home/deploy/salon/shared/tmp/sockets/salon.sock
 
 # check if puma process is running
@@ -48,10 +48,11 @@ case "$1" in
   restart)
     if puma_is_running ; then
       echo "Hot-restarting puma..."
-      kill -s SIGUSR2 `cat $PUMA_PID_FILE`
+      kill -9 `cat $PUMA_PID_FILE`
 
       echo "Doublechecking the process restart..."
       sleep 5
+      bin/puma.sh start
       if puma_is_running ; then
         echo "done"
         exit 0
@@ -60,8 +61,7 @@ case "$1" in
       fi
     fi
 
-    echo "Trying cold reboot"
-    bin/puma.sh start
+
     ;;
 
   *)

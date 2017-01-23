@@ -1,8 +1,17 @@
 #!/usr/bin/env puma
 
-environment ENV['RAILS_ENV'] || 'development'
+#rails的运行环境
+# environment 'production'
+environment 'development'
+threads 2, 64
+workers 4
 
-daemonize true
+#项目名
+app_name = "salon"
+#项目路径
+application_path = "/home/deploy/#{app_name}"
+#这里一定要配置为项目路径下地current
+directory "#{application_path}/current"
 
 
 #下面都是 puma的配置项
@@ -13,5 +22,12 @@ bind "unix://#{application_path}/shared/tmp/sockets/#{app_name}.sock"
 
 
 
-threads 0, 16
+
+#后台运行
+daemonize true
+on_restart do
+  puts 'On restart...'
+end
+preload_app!
+
 

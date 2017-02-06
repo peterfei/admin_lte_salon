@@ -4,7 +4,8 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   def index
-    @members = Member.all.page(params[:page])
+    @q = Member.ransack(params[:q])
+    @members = @q.result(distinct: true).page(params[:page])
   end
 
   # GET /members/1

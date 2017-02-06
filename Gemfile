@@ -80,3 +80,5 @@ gem 'puma', '~> 3.0'
 gem 'listen', '~> 3.1.5'
 
 gem 'axlsx'
+##搜索
+gem 'ransack'

@@ -1,6 +1,17 @@
 .box-header
-  = link_to '新建会员', new_member_path,class:'btn btn-flat btn-primary',remote:true
-  = link_to '导出会员', export_members_path,class:'btn btn-flat btn-primary'
+  .row
+    = search_form_for @q,wrapper:"horizontal_form"  do |f|
+        .col-sm-8
+          = f.label "手机号或会员卡号"
+          =f.search_field :phone_or_cid_cont
+          =f.submit "搜索"
+          /input type="text" name="q" class="form-control" placeholder="手机号"
+
+  .row
+    .col-sm-10
+      = link_to '新建会员', new_member_path,class:'btn btn-flat btn-primary',remote:true
+      = link_to '导出会员', export_members_path,class:'btn btn-flat btn-primary'
+
   .box-body
     .row
       .col-sm-12

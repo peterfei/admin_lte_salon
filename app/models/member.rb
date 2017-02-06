@@ -10,6 +10,6 @@ class Member < ApplicationRecord
             :uniqueness =>{:message=>'卡号已存在'}
   validates :phone,:presence=>{:message=>'电话号码不能为空'},
             :uniqueness =>{:message=>'电话号码已存在'}
-  default_scope  {order("id desc")}
+  default_scope  {order("updated_at desc ,id desc")}
 
 end

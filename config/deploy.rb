@@ -87,7 +87,7 @@ task :deploy => :environment do
       # queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "source /home/deploy/.nvm/nvm.sh&&cd #{deploy_to}/current && bundle exec rake bower:install"
 
-      # queue "cd #{deploy_to}/current && bundle exe rake db:seed"
+      queue "cd #{deploy_to}/current && bundle exe rake db:seed"
       queue "cd #{deploy_to}/current && bundle exe  rails runner lib/tasks/convert_db.rb &&bundle exe rails runner lib/tasks/convert_member_detail.rb "
       invoke :'puma:hard_restart'
 
